@@ -20,7 +20,7 @@
             <div class="box-4 boxs"></div>
             <div class="box-5 boxs"></div>  
             <div class="box-5 boxs"></div>
-            <div class="box-5 boxs"></div> 
+            <div class="box-5 boxs"></div> <div class="box-5 boxs"></div><div class="box-5 boxs"></div><div class="box-5 boxs"></div>
         </div>
         <div class="arrows">
             <div class="arrow-left">
@@ -39,14 +39,13 @@
             const slider = document.querySelector('.box'); 
 
          boxes.forEach((s, i) =>{
-                s.style.transform = `translateX(${100 *i}%)`;
+                s.style.transform = `translateX(${100 * (i - currentSlide)}%)`;
               
          })
     maxSlide = boxes.length;
         document.querySelector('.arrow-left').addEventListener('click', () => {  
           
-          
-            if(currentSlide === maxSlide-1 ){
+            if(currentSlide === maxSlide-1){
                 currentSlide=0;   
                  
                 
@@ -61,7 +60,7 @@
 
            document.querySelector('.arrow-right').addEventListener('click', () => {
 
-                if (currentSlide === maxSlide - 1) {
+                if (currentSlide) {
                     currentSlide--;
                 } else {
                     
